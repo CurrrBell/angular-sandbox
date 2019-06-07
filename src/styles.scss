@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  font-family: "Open Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+  margin-top: 0px;
+}
+
+main {
+  height: calc(100% - 120px); // 60px for nav, 60px for padding-top
+  max-width: 1200px;
+
+  margin: 0 auto;
+  padding: 60px 10vw 0px 10vw;
+}
