@@ -1,0 +1,57 @@
+@import "../../sass/variables.scss";
+
+:host {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+aside {
+  margin-right: 3rem;
+  flex-basis: 20%;
+  position: sticky;
+  top: 50px;
+
+  color: $experity-blue;
+}
+
+aside ul {
+  list-style: none;
+}
+
+aside ul li {
+  margin-bottom: 5px;
+}
+
+aside ul li::before {
+  content: "- ";
+}
+
+article {
+  flex-grow: 2;
+  flex-shrink: 2;
+  max-width: 50rem;
+}
+
+figure {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+code {
+  margin: 0 0.3rem;
+  font-family: "Courier New", Courier, monospace;
+  color: #cc0000;
+  background-color: #eee;
+}
+
+a {
+  color: $experity-blue;
+  text-decoration-color: $experity-green;
+}
+
+a:hover {
+  text-decoration-color: $experity-blue;
+}

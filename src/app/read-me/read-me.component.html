@@ -1,0 +1,81 @@
+<aside>
+  <ul>
+    <li>Getting Started</li>
+    <li>Debugging</li>
+    <li>Folder Structure</li>
+    <li>nav</li>
+    <li>nav</li>
+    <li>nav</li>
+    <li>nav</li>
+  </ul>
+</aside>
+<article>
+  <header>
+    <h3>Getting Started</h3>
+  </header>
+  <p>
+    The guts of this app live in the <code>~/src/app/</code> directory. You should see several items in that
+    folder. Right now, you're reading the contents of <code>read-me/read-me.component.html</code>, which itself
+    lives inside <code>home/home.component.html</code>. If you'd like to get developing right away, go ahead and
+    remove the <code>app-read-me</code> element from the home component. Then, create a new component with the
+    following command: <code [innerHTML]="generateCommand"></code>. Don't forget to delete the read-me component when
+    you're done!
+  </p>
+  <p>
+    If you're new to VSCode, <a href="https://code.visualstudio.com/download">try it out if you haven't</a>, and check
+    out the <a href="https://marketplace.visualstudio.com/items?itemName=chris-bell.experity-vscode-extension-pack"
+      target="_blank">Experity VSCode Extension Pack</a>. In it you'll find numerous functional and cosmetic upgrades
+    to VSCode, including Angular development tools, a code spell-checker, GitLens, Live Code Share and more. If you'd
+    prefer a slimmer, more functional pack of extensions, <a
+      href="https://marketplace.visualstudio.com/items?itemName=chris-bell.experity-vscode-essentials">Experity VSCode
+      Essentials</a> trims out the cosmetic ones.
+    <!-- If you end up not liking some of the extensions included, feel free to uninstall them; -->
+  </p>
+  <header>
+    <h3>Debugging</h3>
+  </header>
+  <p>
+    If you're here for the first time, you probably did so by hitting F5. Well done! 👏 Typing F5 launches the
+    default debug configuration. Right now, that is "Launch dev build":
+  </p>
+  <figure>
+    <img src="../../assets/images/read-me/debug.PNG" alt="Debug launch configuration">
+  </figure>
+  <p>
+    You can also hit the green play button instead of typing F5 to launch the debugger. VSCode's debugger is configured
+    in the <code>launch.json</code> and <code>tasks.json</code> files. Don't worry about their contents for now, but
+    it's good to keep in mind that they are what drives the debugger.
+  </p>
+  <p>
+    Once running, the debugger behaves a lot like the Visual Studio debugger that you may be used to. Find
+    <code>read-me.component.ts</code> and place a breakpoint in the <code>ngOnInit()</code> method:
+  </p>
+  <figure>
+    <img src="../../assets/images/read-me/breakpoint.PNG" alt="Breakpoint in ngOnInit">
+  </figure>
+  <p>
+    Manually refresh your browser and you should hit your breakpoint. On the left pane, you'll see the usual debugger
+    information: variables in this scope, any watch conditions you may have set up, the current call stack, etc. You can
+    resume execution by either hitting the resume button on the debugger menu, in Chrome itself, or by hitting F5.
+  </p>
+  <p>
+    While debugging, you will have live reload of all of your Angular code. Try it out! Open
+    <code>homecomponent.html</code>, change the text in the <code>h1</code> tag, and hit save. The running Angular
+    server will recompile the code and refresh the Chrome tab so you can see your changes immediately.
+  </p>
+  <p>
+    Clicking on the dropdown at the top will show the other available debug configurations. The "Launch prod build"
+    config will emulate how the app will be built in production: the build will be optimized and the app shell and
+    service worker will be compiled.
+  </p>
+  <p>There is also a debug configuration for debugging unit tests. This configuration will launch an instance of the
+    Karma test runner with live reload. After any change you make, Karma will run through all the unit tests and report
+    the results. Not only will you be able to hit breakpoints in your <code>.ts</code> files, you'll <em>also</em> be
+    able to hit breakpoints in any <code>spec.ts</code> files!</p>
+  <header>
+    <h3>Folder Structure</h3>
+  </header>
+  <p>
+    <button (click)="onClick()">test</button>
+  </p>
+</article>
