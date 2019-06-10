@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
 import { NavComponent } from './nav/nav.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { NavComponent } from './nav/nav.component';
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
+    HttpClientModule,
     HomeModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     RouterModule
@@ -24,7 +26,6 @@ import { NavComponent } from './nav/nav.component';
   exports: [
     NavComponent
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
