@@ -31,7 +31,7 @@ speed-measure-plugin.json
 !.vscode/extensions.json
 .history/*
 
-/src/app/read-me
+#/src/app/read-me
 
 # misc
 /.sass-cache
