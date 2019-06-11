@@ -6,9 +6,11 @@ nav {
   justify-content: space-between;
   align-items: center;
 
-  height: 58px;
+  height: 48px;
   width: calc(100% - 20px);
   padding: 0px 10px;
+  position: fixed;
+  top: 0;
 
   color: #fff;
   background-color: $experity-blue;
