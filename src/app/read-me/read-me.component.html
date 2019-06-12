@@ -87,12 +87,35 @@
     <h4>1. The top priority of your folder structure should be ease of location.</h4>
   </header>
   <p>
-    If you're working in this application
-    every day, you'll probably be able to find any file easily regardless of how you organize them. Your folder
-    structure, then, should be tailored to benefit unfamiliar developers. Imagine you've never seen this application
-    before, would you easily be able to find that particular service if it was buried 4 directories deep?
+    If you're working in this application every day, you'll probably be able to find any file easily regardless of how
+    you organize them. Your folder structure, then, should be tailored to benefit unfamiliar developers. Imagine you've
+    never seen this application before; would you easily be able to find that particular class, service, or interface if
+    it was buried 4 directories deep? Probably not. In general flatter (i.e. less nesting) is better. If, after a while,
+    there are too many things in the root <code>src/app/</code> folder, consider reorganizing and grouping things into
+    more nested folders.
   </p>
+  <header>
+    <h4>2. Organize code files by feature.</h4>
+  </header>
+  <p>
+    This is a consequence of item #1 above. Particularly for unfamiliar devs, grouping code by feature will make them
+    easier to locate. Furthermore, grouping code by feature will lead to easier code bundling and lazy loading.
+  </p>
+  <header>
+    <h4>3. There is no silver bullet solution</h4>
+  </header>
+  <p>
+    The guidelines both here and the official Angular style guide are very vague. In the end, different approaches work
+    for different applications. Apps of different size and feature variety work better or worse with particular
+    approaches. Moreover, size and feature variety change as applications age; you may well find that the folder
+    structure you embark with is insufficient in six months. Remain open to rearranging and rearchitecting.
+  </p>
+  <header>
+    <h3>Naming Conventions</h3>
+  </header>
+  <p>
 
+  </p>
   <!-- <p>
     <button (click)="onClick()">test</button>
   </p> -->
