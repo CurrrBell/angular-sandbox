@@ -9,7 +9,8 @@
 }
 
 * {
-  line-height: 1.5rem;
+  line-height: 1.8rem;
+  color: #0c1327;
 }
 
 aside {
@@ -19,7 +20,7 @@ aside {
   top: 90px;
 
   color: $experity-blue;
-  border-left: 5px solid $experity-blue;
+  border-left: 5px solid $experity-green;
 }
 
 aside ul {
@@ -29,7 +30,8 @@ aside ul {
 }
 
 aside ul li {
-  margin-bottom: 5px;
+  font-size: 14px;
+  //line-height: 1.4rem;
 }
 
 article {
@@ -48,10 +50,15 @@ code {
   padding: 0.1rem 0.3rem 0.2rem;
 
   font-family: "Operator Mono", "Source Code Pro", Menlo, Consolas, Monaco, monospace;
+  line-height: 1.3rem;
 
   color: #199a28;
   background-color: hsl(224, 53%, 94%);
   border-radius: 0.2rem;
+}
+
+p {
+  font-size: 16px;
 }
 
 a {
