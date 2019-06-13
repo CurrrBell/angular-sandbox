@@ -31,13 +31,30 @@ aside ul {
 
 aside ul li {
   font-size: 14px;
-  //line-height: 1.4rem;
+}
+
+aside ul li a {
+  text-decoration: none;
+}
+
+aside ul li a:hover {
+  text-decoration: underline;
+  text-decoration-color: $experity-green;
 }
 
 article {
   flex-grow: 2;
   flex-shrink: 2;
   max-width: 50rem;
+}
+
+h3::before {
+  display: block;
+  content: " ";
+  margin-top: -60px;
+  height: 60px;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 figure {
@@ -76,4 +93,8 @@ img {
   margin: 0 auto;
   border-radius: 6px;
   box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.3), 0px 0px 30px rgba(0, 0, 0, 0.08);
+}
+
+ul li {
+  margin-bottom: 1rem;
 }
