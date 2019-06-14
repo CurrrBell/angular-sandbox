@@ -156,7 +156,16 @@
     kept in check.
   </p>
   <p>
-
+    Keeping an eye on the 'Network' tab, click the "UI Examples" link in the top navigation. You'll notice something
+    new:
+  </p>
+  <figure>
+    <img src="../../assets/images/read-me/lazy-load.png" alt="">
+  </figure>
+  <p>We have a fifth bundle! This highlights a crucial strategy to improve performance: the code for the UI Examples
+    page is not necessary for the initial page load. Angular will separate out the code for it and lazy load it when
+    the user tries to navigate there. More information on implementing lazy loading can be found
+    <a href="https://angular.io/guide/lazy-loading-ngmodules#lazy-loading-feature-modules" target="_blank">here</a>.
   </p>
   <!-- <p>
     <button (click)="onClick()">test</button>
