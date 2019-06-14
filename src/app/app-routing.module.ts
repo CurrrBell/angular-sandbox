@@ -3,9 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ReadMeComponent } from './read-me/read-me.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'read-me', component: ReadMeComponent }
+  { path: 'read-me', component: ReadMeComponent },
+  {
+    path: 'ui-examples',
+    loadChildren: () => import('./ui-examples/ui-examples.module').then(mod => mod.UiExamplesModule)
+  }
 ];
 
 @NgModule({

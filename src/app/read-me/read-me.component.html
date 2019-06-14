@@ -9,9 +9,6 @@
 </aside>
 <article>
   <header>
-    <h1>Welcome to your new Angular App! 🎉</h1>
-  </header>
-  <header>
     <h3 id='getting-started'>Getting Started</h3>
   </header>
   <p>
@@ -133,6 +130,34 @@
   <header>
     <h3 id='bundling'>Bundling the Application</h3>
   </header>
+  <p>
+    While debugging, head over to the browser instance running the app and hit F12 to bring up the Developer Tools.
+    Click the Network tab to see the list of files that comprise this application. Check the "Disable cache" checkbox
+    and refresh the page. In the toolbar below the "Disable cache" checkbox, click the "JS" button to filter the list to
+    only show Javascript files. Assuming you're running the dev build, you should see something like this:
+  </p>
+  <figure>
+    <img src="../../assets/images/read-me/bundles.png" alt="App js bundles">
+  </figure>
+  <p>
+    Thus, we have four Javascript files that comprise our app. The contents of <code>runtime.js</code> and
+    <code>main.js</code> are application-specific code. In order to run in IE (because IE is the scourge of the
+    Internet), we must also include <code>polyfills.js</code> so that IE can understand some of the newer features of
+    modern Javascript. In a production build, <code>polyfills.js</code> will not be served in "Evergreen" browsers like
+    Chrome.
+  </p>
+  <p>
+    Lastly is <code>vendor.js</code>, which holds all the third-party dependencies for the app:
+    Angular framework code, any third-party UI components, essentially anything in the <code>dependencies: ...</code>
+    node of <code>package.json</code>. You'll note that this file is <em><strong>HUGE;</strong></em> 4MB is an enormous
+    amount of data to be downloaded over anything other than the best-case network scenario. For reference, 10 seconds
+    or so of 360p video is about the same size. The final file size will end up being smaller than 4MB in a production
+    build, but the size of what we send over the wire, particularly in <code>vendor.js</code>, is something that must be
+    kept in check.
+  </p>
+  <p>
+
+  </p>
   <!-- <p>
     <button (click)="onClick()">test</button>
   </p> -->
