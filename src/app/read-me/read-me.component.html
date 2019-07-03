@@ -1,0 +1,175 @@
+<aside>
+  <ul>
+    <li><a href="#getting-started">Getting Started</a></li>
+    <li><a href="#debugging">Debugging</a></li>
+    <li><a href="#folder-structure">Folder Structure</a></li>
+    <li><a href="#naming-conventions">Naming Conventions</a></li>
+    <li><a href="#bundling">Bundling the Application</a></li>
+  </ul>
+</aside>
+<article>
+  <header>
+    <h3 id='getting-started'>Getting Started</h3>
+  </header>
+  <p>
+    The guts of this app live in the <code>~/src/app/</code> directory. You should see several items in that
+    folder. Right now, you're reading the contents of <code>read-me/read-me.component.html</code>, which itself
+    lives inside <code>home/home.component.html</code>. If you'd like to get developing right away, go ahead and
+    remove the <code>app-read-me</code> element from the home component. Then, create a new component with the
+    following command: <code [innerHTML]="generateCommand"></code>. Don't forget to delete the read-me component at some
+    point! 😉
+  </p>
+  <p>
+    If you're new to VSCode, <a href="https://code.visualstudio.com/download">try it out if you haven't</a>, and check
+    out the <a href="https://marketplace.visualstudio.com/items?itemName=chris-bell.experity-vscode-extension-pack"
+      target="_blank">Experity VSCode Extension Pack</a>. In it you'll find numerous functional and cosmetic upgrades
+    to VSCode, including Angular development tools, a code spell-checker, GitLens, Live Code Share and more. If you'd
+    prefer a slimmer, more functional pack of extensions, <a
+      href="https://marketplace.visualstudio.com/items?itemName=chris-bell.experity-vscode-essentials">Experity VSCode
+      Essentials</a> trims out the cosmetic ones.
+    <!-- If you end up not liking some of the extensions included, feel free to uninstall them; -->
+  </p>
+  <header>
+    <h3 id='debugging'>Debugging</h3>
+  </header>
+  <p>
+    If you're here for the first time, you probably did so by hitting F5. Well done! 👏 Typing F5 launches the
+    default debug configuration. Right now, that is "Launch dev build":
+  </p>
+  <figure>
+    <img src="../../assets/images/read-me/debug.PNG" alt="Debug launch configuration">
+  </figure>
+  <p>
+    You can also hit the green play button instead of typing F5 to launch the debugger. VSCode's debugger is configured
+    in the <code>launch.json</code> and <code>tasks.json</code> files. Don't worry about their contents for now, but
+    it's good to keep in mind that they are what drives the debugger.
+  </p>
+  <p>
+    Once running, the debugger behaves a lot like the Visual Studio debugger that you may be used to. Find
+    <code>read-me.component.ts</code> and place a breakpoint in the <code>ngOnInit()</code> method:
+  </p>
+  <figure>
+    <img src="../../assets/images/read-me/breakpoint.PNG" alt="Breakpoint in ngOnInit">
+  </figure>
+  <p>
+    Manually refresh your browser and you should hit your breakpoint. On the left pane, you'll see the usual debugger
+    information: variables in this scope, any watch conditions you may have set up, the current call stack, etc. You can
+    resume execution by either hitting the resume button on the debugger menu, in Chrome itself, or by hitting F5.
+  </p>
+  <p>
+    While debugging, you will have live reload of all of your Angular code. Try it out! Open
+    <code>homecomponent.html</code>, change the text in the <code>h1</code> tag, and hit save. The running Angular
+    server will recompile the code and refresh the Chrome tab so you can see your changes immediately.
+  </p>
+  <p>
+    Clicking on the dropdown at the top will show the other available debug configurations. The "Launch prod build"
+    config will emulate how the app will be built in production: the build will be optimized and the app shell and
+    service worker will be compiled.
+  </p>
+  <p>There is also a debug configuration for debugging unit tests. This configuration will launch an instance of the
+    Karma test runner with live reload. After any change you make, Karma will run through all the unit tests and report
+    the results. Not only will you be able to hit breakpoints in your <code>.ts</code> files, you'll <em>also</em> be
+    able to hit breakpoints in any <code>spec.ts</code> files! ✨</p>
+  <header>
+    <h3 id='folder-structure'>Folder Structure</h3>
+  </header>
+  <p>The <a href="https://angular.io/guide/styleguide#application-structure-and-ngmodules" target="_blank">Official
+      Angular Style Guide</a> recommends keeping application folder structure as flat as possible. Often times,
+    organization is done preemptively and needless nesting is created. To summarize the content of the Style Guide's
+    section on folder structure:
+  </p>
+  <header>
+    <h4>1. Resist the urge to nest folders. The top priority of your folder structure should be ease of location.</h4>
+  </header>
+  <p>
+    If you're working in this application every day, you'll probably be able to find any file easily regardless of how
+    you organize them. Your folder structure, then, should be tailored to benefit unfamiliar developers. Imagine you've
+    never seen this application before; would you easily be able to find that particular class, service, or interface if
+    it was buried 4 directories deep? Probably not. In general flatter (i.e. less nesting) is better. If, after a while,
+    there are too many things in the root <code>src/app/</code> folder, consider reorganizing and grouping things into
+    more nested folders.
+  </p>
+  <header>
+    <h4>2. Organize code files by feature.</h4>
+  </header>
+  <p>
+    This is a consequence of item #1 above. Particularly for unfamiliar devs, grouping code by feature will make them
+    easier to locate. Furthermore, grouping code by feature will lead to easier code bundling and lazy loading.
+  </p>
+  <header>
+    <h4>3. There is no silver bullet solution</h4>
+  </header>
+  <p>
+    The guidelines both here and the official Angular style guide are very vague. In the end, different approaches work
+    for different applications. Apps of different size and feature variety work better or worse with particular
+    approaches. Moreover, size and feature variety change as applications age; you may well find that the folder
+    structure you embark with is insufficient in six months. Remain open to rearranging and rearchitecting.
+  </p>
+  <header>
+    <h3 id='naming-conventions'>Naming Conventions</h3>
+  </header>
+  <p>
+    The official style guide also has <a href="https://angular.io/guide/styleguide#naming">guidelines for naming
+      conventions</a>. Most of them are enforced by the <code>tslint.config.ts</code> file in the root of this project.
+    Here are the most commonly used ones:
+  </p>
+  <ul>
+    <li>
+      Use <code>kebab-case</code> for file names, i.e. all lower case with <code>-</code> delimiters. Avoid
+      abbreviations unless the file name is very large (>50 characters) or the abbreviation is industry standard.
+      <code>Good: http-interceptor.service.ts</code>
+      <br>
+      <code>Bad: CrgHdrSvc.ts</code>
+    </li>
+    <li>
+      Follow the default Angular naming convention of <code>descriptor.function.extension</code>, e.g.
+      <code>read-me.component.html</code>, <code>active-provider-filter.pipe.ts</code>, etc.
+    </li>
+    <li>
+      Suffix references to observables with <code>$</code>, e.g. <code>selectedPractice$</code>
+    </li>
+  </ul>
+  <header>
+    <h3 id='bundling'>Bundling the Application</h3>
+  </header>
+  <p>
+    While debugging, head over to the browser instance running the app and hit F12 to bring up the Developer Tools.
+    Click the Network tab to see the list of files that comprise this application. Check the "Disable cache" checkbox
+    and refresh the page. In the toolbar below the "Disable cache" checkbox, click the "JS" button to filter the list to
+    only show Javascript files. Assuming you're running the dev build, you should see something like this:
+  </p>
+  <figure>
+    <img src="../../assets/images/read-me/bundles.png" alt="App js bundles">
+  </figure>
+  <p>
+    Thus, we have four Javascript files that comprise our app. The contents of <code>runtime.js</code> and
+    <code>main.js</code> are application-specific code. In order to run in IE (because IE is the scourge of the
+    Internet), we must also include <code>polyfills.js</code> so that IE can understand some of the newer features of
+    modern Javascript. In a production build, <code>polyfills.js</code> will not be served in "Evergreen" browsers like
+    Chrome.
+  </p>
+  <p>
+    Lastly is <code>vendor.js</code>, which holds all the third-party dependencies for the app:
+    Angular framework code, any third-party UI components, essentially anything in the <code>dependencies: ...</code>
+    node of <code>package.json</code>. You'll note that this file is <em><strong>HUGE;</strong></em> 4MB is an enormous
+    amount of data to be downloaded over anything other than the best-case network scenario. For reference, 10 seconds
+    or so of 360p video is about the same size. The final file size will end up being smaller than 4MB in a production
+    build, but the size of what we send over the wire, particularly in <code>vendor.js</code>, is something that must be
+    kept in check.
+  </p>
+  <p>
+    Keeping an eye on the 'Network' tab, click the "UI Examples" link in the top navigation. You'll notice something
+    new:
+  </p>
+  <figure>
+    <img src="../../assets/images/read-me/lazy-load.png" alt="">
+  </figure>
+  <p>We have a fifth bundle! This highlights a crucial strategy to improve performance: the code for the UI Examples
+    page is not necessary for the initial page load. Angular will separate out the code for it and lazy load it when
+    the user tries to navigate there. More information on implementing lazy loading can be found
+    <a href="https://angular.io/guide/lazy-loading-ngmodules#lazy-loading-feature-modules" target="_blank">here</a>.
+  </p>
+  <!-- <p>
+    <button (click)="onClick()">test</button>
+  </p> -->
+</article>
